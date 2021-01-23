@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>drop-down</title>
+    <script src="./js/DropDown.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -91,8 +93,7 @@
             <li></li>
         </ul>
     </div>
-
-    <script>
+    <!-- <script>
         //为对象插入CSS样式
         function insertStyle(obj, attrs) {
             for (const attr in attrs) {
@@ -118,7 +119,7 @@
                     var height = parseInt(obj.style.height.split("px")[0]);
                     var width = parseInt(obj.style.width.split("px")[0]);
                     var marginTop = parseInt(obj.style.marginTop.split("px")[0]);
-                    // var infoHeight = parseInt(info.style.height.split("px")[0]);
+                    var infoHeight = parseInt(info.style.height.split("px")[0]);
 
                     var y = (target - height) / 10;
                     y = y > 0 ? Math.ceil(y) : Math.floor(y);
@@ -127,17 +128,16 @@
                     var m = (0 - marginTop) / 10;
                     m = m > 0 ? Math.ceil(m) : Math.floor(m);
 
-                    // var iy = (target - infoHeight) / 10;
-                    // iy = iy > 0 ? Math.ceil(iy) : Math.floor(iy);
+                    var iy = (target - infoHeight) / 10;
+                    iy = iy > 0 ? Math.ceil(iy) : Math.floor(iy);
 
-                    // info.style.height = infoHeight + iy + "px";
+                    info.style.height = infoHeight + iy + "px";
                     obj.style.width = width + x + "px";
                     obj.style.height = height + y + "px";
                     if (height < 20) {
                         obj.style.opacity = height < 10 ? 0 : height / 40;
                     }
                     if (height < 25) {
-                        info.style.height = height + y + "px";
                         info.style.opacity = height < 10 ? 0 : height / 40;
                     }
                     if (height < 10) {
@@ -154,19 +154,37 @@
             this.move = (obj, callback) => {
                 var moveEndObj = this;
                 var target = callback ? 20 : 0;
+                var info = this.info;
                 clearInterval(obj.timer);
                 obj.timer = setInterval(function() {
                     var height = parseInt(obj.style.height.split("px")[0]);
                     var width = parseInt(obj.style.width.split("px")[0]);
                     var marginTop = parseInt(obj.style.marginTop.split("px")[0]);
+                    var infoHeight = parseInt(info.style.height.split("px")[0]);
+
                     var y = (target - height) / 10;
                     y = y > 0 ? Math.ceil(y) : Math.floor(y);
                     var x = (target - width) / 10;
                     x = x > 0 ? Math.ceil(x) : Math.floor(x);
                     var m = (0 - marginTop) / 10;
                     m = m > 0 ? Math.ceil(m) : Math.floor(m);
+
+
+                    var iy = (target - infoHeight) / 10;
+                    iy = iy > 0 ? Math.ceil(iy) : Math.floor(iy);
+
+                    info.style.height = infoHeight + iy + "px";
                     obj.style.width = width + x + "px";
                     obj.style.height = height + y + "px";
+                    //改变字体内容
+                    if (obj.style.height > 100) {
+                        info.innerHTML = "松开刷新";
+                    } else {
+                        info.innerHTML = "下拉刷新";
+                    }
+                    if (height < 25) {
+                        info.style.opacity = height < 10 ? 0 : height / 40;
+                    }
                     if (height < 20) {
                         obj.style.opacity = height < 10 ? 0 : height / 40;
                     }
@@ -213,6 +231,12 @@
                     this.info.style.opacity = parseInt(this.info.style.opacity) - (this.opacity - 20) > 20 ? 0 : (this.opacity - 20) / 20;
 
                 }
+                //改变字体内容
+                if (parseInt(this.circ.style.width.split("px")[0]) > 100) {
+                    this.info.innerHTML = "松开刷新";
+                } else {
+                    this.info.innerHTML = "下拉刷新";
+                }
                 //圆的透明变化
                 if (parseInt(this.circ.style.width.split("px")[0]) > 5) {
                     this.circ.style.opacity = parseInt(this.circ.style.opacity) + this.opacity > 40 ? 1 : this.opacity / 40;
@@ -233,7 +257,7 @@
                 if (parseInt(this.circ.style.width.split("px")[0]) <= 0) {
                     this.circ.style.display = "none";
                 }
-                if (parseInt(this.circ.style.width.split("px")[0]) > 120) {
+                if (parseInt(this.circ.style.width.split("px")[0]) > 100) {
                     this.move(this.circ, this.callback);
                 } else {
                     this.move(this.circ);
@@ -290,7 +314,7 @@
                 console.log(123);
             }
         }).init();
-    </script>
+    </script> -->
 </body>
 
 </html>
