@@ -6,14 +6,16 @@
 
 qui的下拉样式使用js动态添加，只需要 引入js文件，并为想要设置下拉样式的html的容器添加drop-down类名，即可成功加载下拉样式
 
-![](https://github.com/queuecat/qui-app/image/下拉样式总览.gif)
+![image](https://github.com/queuecat/qui-app/blob/main/image/%E4%B8%8B%E6%8B%89%E6%A0%B7%E5%BC%8F%E6%80%BB%E8%A7%88.gif?raw=true)
 
 例如，以CSDN主页为例：
 
-1. 为html容器添加类名![](https://github.com/queuecat/qui-app/image/下拉介绍_添加类名.png)
+1. 为html容器添加类名
+![image](https://github.com/queuecat/qui-app/blob/main/image/%E4%B8%8B%E6%8B%89%E4%BB%8B%E7%BB%8D_%E6%B7%BB%E5%8A%A0%E7%B1%BB%E5%90%8D.png?raw=true)
 2. 引入DropDown.js文件
 3. 使用其中的构造函数*DropDown*实例化下拉对象，并调用对象的init()方法初始化
-4. 使用样式![](https://github.com/queuecat/qui-app/image/下拉样式介绍.gif)
+4. 使用样式
+![image](https://github.com/queuecat/qui-app/blob/main/image/%E4%B8%8B%E6%8B%89%E6%A0%B7%E5%BC%8F%E4%BB%8B%E7%BB%8D.gif?raw=true)
 
 ### 使用
 
