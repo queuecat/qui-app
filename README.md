@@ -53,7 +53,7 @@ new DropDown({
 
 ## 模态框
 
-![image-20210129235131645](https://github.com/queuecat/qui-app/blob/main/image/模态框.png?raw=true)
+![image-20210129235131645](https://github.com/queuecat/qui-app/blob/main/image/%E6%A8%A1%E6%80%81%E6%A1%86.png?raw=true)
 
 ### 使用
 
