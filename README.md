@@ -53,7 +53,7 @@ new DropDown({
 
 ## 模态框
 
-![image-20210129235131645](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210129235131645.png)
+![image-20210129235131645](https://github.com/queuecat/qui-app/blob/main/image/模态框.png?raw=true)
 
 ### 使用
 
