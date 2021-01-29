@@ -50,3 +50,30 @@ new DropDown({
 
 - 类型：function
 - 详情：在下拉到到一定程度时，释放完成后将会执行该回调函数，在执行过程中，下拉样式将会保留一部分，直到执行完成后才会消失
+
+## 模态框
+
+![image-20210129235131645](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210129235131645.png)
+
+### 使用
+
+1. 引入Modal.js文件，引入后将会获得Modal构造函数，使用new关键字构造即可获得模态框
+
+```javascript
+var modal = new Modal({
+    type: "single", //single:单按钮,double:双按钮
+    buttonInfo: [{
+        name: "知道了",
+        callback: function() {
+            console.log("调用回调函数");
+        }
+    }], //格式：{name:按钮的文本信息,callback点击后回调函数}，单按钮取第一个，双按钮取前两个
+    title: "分享给朋友", //标题
+    data: ["Modal body text goes here.", "Woohoo, you're reading this text in a modal!"] //模态框内容信息，每个数组元素占用一行
+});
+```
+
+2. 模态框对象函数
+   - show：新构造的对象默认没有显现，需要使用show函数将其显现出来
+   - hide：显现出来的模态框使用hide函数隐藏
+   - clear：将模态框从页面中清理出去

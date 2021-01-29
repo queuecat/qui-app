@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/Modal.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* 滚动条样式 */
+        
+        *::-webkit-scrollbar {
+            width: 2px;
+            height: 1px;
+            background-color: #fff;
+        }
+        
+        *::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+            background: #fff;
+            border-radius: 10px;
+        }
+        
+        *::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #212529;
+            /* background-image: -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent); */
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: cornflowerblue;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .drop-down {
+            width: 450px;
+            height: 700px;
+            border-radius: 10px;
+            overflow: auto;
+            background-color: #fff;
+        }
+        
+        .main {
+            width: calc(100%-40px);
+            padding: 0 20px;
+        }
+        
+        .main li {
+            list-style: none;
+            border-bottom: 1px solid #000;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="drop-down">
+        <ul class="main">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- <div class="modal" style="position: fixed;width: 100%;height: 100%;background-color: rgba(0,0,0,.2);">
+        <div style="position: absolute;bottom: 0;width: 100%;border-radius: 15px 15px 0 0;background-color: #fff;">
+            <h4 style="padding: 20px 0 15px 0;text-align: center;">分享给朋友</h4>
+            <div style="padding: 15px;display: flex;flex-direction: column;justify-content: space-between;align-items: center;">
+                <p style="margin-bottom: 10px;">123</p>
+                <p style="margin-bottom: 10px;">我他妈直接痴呆</p>
+                <p style="margin-bottom: 10px;">fuck啊</p>
+            </div>
+            <div style="display: flex;justify-content: center;align-items: center;padding: 10px;">
+                <button style="background-color: #4395ff;color: #fff;font-size: 15px;margin: 5px;-webkit-tap-highlight-color: transparent;border: none;outline: none;padding: 10px 0;width: 70%;border-radius: 20px;">完成</button>
+            </div>
+        </div>
+    </div> -->
+    <script>
+        var modal = new Modal({
+            type: "single", //single:单按钮,double:双按钮
+            buttonInfo: [{
+                name: "知道了",
+                callback: function() {
+                    console.log("调用回调函数");
+                }
+            }], //格式：{name:按钮的文本信息,callback点击后回调函数}，单按钮取第一个，双按钮取前两个
+            title: "分享给朋友", //标题
+            data: ["Modal body text goes here.", "Woohoo, you're reading this text in a modal!"] //模态框内容信息，每个数组元素占用一行
+        });
+    </script>
+</body>
+
+</html>
